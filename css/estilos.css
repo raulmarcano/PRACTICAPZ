@@ -315,6 +315,7 @@ z-index: 1;
     grid-row: imagen;
     grid-column: imagen;
     transition: all 0.5s;
+    justify-self: center;
 
 }
 
@@ -454,6 +455,60 @@ transition-delay: 0.2s;
     scale: 2;
 }
 
+/*SECCION DE INGREDIENTES*/
+
+#ingredientes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingre{
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    
+}
+
+.imagen-ingre{
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+
+.info-ingre{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    transition: all 0.3s;
+
+}
+
+.info-ingre p{
+    font-size: 28px;
+    color: #fff;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.info-ingre:hover{
+    background: rgba(0,0,0,0.25);
+}
+
+.info-ingre:hover p{
+
+    transform: translateY(10px);
+}
+
 
 /*MEDIA QUERYS*/
 
@@ -552,6 +607,9 @@ transition-delay: 0.2s;
         font-size: 20px;
     }
 
+    /*Slider productos*/
+
+
    .imagen-productos{
         width: 40%;
    }
@@ -567,6 +625,12 @@ transition-delay: 0.2s;
 
    .descripcion-productos h2{
         font-size: 3vw;
+   }
+
+   /*INGREDIENTES*/
+
+   .info-ingre .txt-ingre{
+    display: none;
    }
 
 }
