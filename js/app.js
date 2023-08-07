@@ -46,4 +46,25 @@ var contenedor = document.querySelector('.slider'),
         contenedor.scrollLeft -= contenedor.offsetWidth;
     });
 
+
+    //VALIDACIÓN DE FORMULARIO SECCIÓN CONTACTOS
+
+    var formulario = document.getElementById("formulario")
+
+    function validar(e){
+        var inputNombre = document.getElementById("nombre"), inputEmail = document.getElementById("email"), inputComments = document.getElementById("comentarios");
+
+        if(inputEmail.value == 0 || inputNombre.value == 0 || inputComments.value == 0 ){
+            e.preventDefault();
+            alert("Datos vacíos");
+        }else{
+            e.preventDefault;
+            alert("Datos enviados");
+            inputNombre.value = "";
+            inputComments.value = "";
+            inputEmail.value = "";
+        }
+    }
+         //Eventos del formulario
+    formulario.addEventListener("submit",validar);
     

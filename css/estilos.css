@@ -658,6 +658,7 @@ transition-delay: 0.2s;
 }
 
 @media screen and (max-width: 650px){
+   
     /*Menu principal*/
     
     .menu-principal{
@@ -730,6 +731,22 @@ transition-delay: 0.2s;
 
    .info-ingre .txt-ingre{
     display: none;
+   }
+
+   /* CONTACTOS */
+
+   #formulario{
+width: 100%;
+
+   }
+
+   .two-fields{
+    flex-direction: column;
+   }
+   
+
+   .inputConIcon{
+    width: 100%;
    }
 
 }
