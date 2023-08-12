@@ -52,14 +52,43 @@ var contenedor = document.querySelector('.slider'),
     var formulario = document.getElementById("formulario")
 
     function validar(e){
-        var inputNombre = document.getElementById("nombre"), inputEmail = document.getElementById("email"), inputComments = document.getElementById("comentarios");
+        var inputNombre = document.getElementById("nombre"), inputEmail = document.getElementById("email"), inputComments = document.getElementById("comentarios"), alertSuccess = document.getElementById("alertSuccess"), alertError = document.getElementById("alertError");
 
         if(inputEmail.value == 0 || inputNombre.value == 0 || inputComments.value == 0 ){
             e.preventDefault();
-            alert("Datos vacíos");
-        }else{
-            e.preventDefault;
-            alert("Datos enviados");
+
+             // alert("Datos vacíos");
+             alertError.classList.remove("hide");
+             alertError.classList.add("show");
+
+             setTimeout(function(){
+                alertError.classList.remove("show");
+             alertError.classList.add("hide");
+             }, 2000);
+
+
+
+
+
+
+        } else {
+            
+            //alert("Datos enviados");
+            e.preventDefault();
+
+            alertSuccess.classList.remove("hide");
+            alertSuccess.classList.add("show");
+
+             setTimeout(function(){
+                alertSuccess.classList.remove("show");
+             alertSuccess.classList.add("hide");
+             }, 2000);
+
+
+        
+
+
+
             inputNombre.value = "";
             inputComments.value = "";
             inputEmail.value = "";
@@ -67,4 +96,3 @@ var contenedor = document.querySelector('.slider'),
     }
          //Eventos del formulario
     formulario.addEventListener("submit",validar);
-    
