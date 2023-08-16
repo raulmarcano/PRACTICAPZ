@@ -29,6 +29,10 @@
 
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
 
     background: var(--color-background);
@@ -724,7 +728,47 @@ transition-delay: 0.2s;
         transform: translateY(-20px);
     }
 
+    /* BOTÓN DE IR ARRIBA */
 
+    #btn-top{
+        width: 50px;
+        height: 50px;
+        background: var(--color-primario);
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1;
+        transition: all 0.5s;
+        transform: translateY(200%);
+
+    }
+
+    #btn-top.show.scrollFinal{
+        transform: translateY(-250%);
+        
+    }
+
+    #btn-top.show{
+        transform: translateY(0);
+    }
+
+    #btn-top span{
+        color: #fff;
+        font-size: 25px;
+        width: 100%;
+        text-align: center;
+        line-height: 50px;
+        transition: all 0.5s;
+    }
+
+    #btn-top:hover{
+        background: #d89127;
+    }
+
+    #btn-top:hover span{
+        transform: translateY(-3px);
+    }
 
 /*MEDIA QUERYS*/
 
@@ -887,6 +931,12 @@ width: 100%;
 
    .sociales-metodo{
     width: 50%
+   }
+
+   /* BOTÓN DE IR ARRIBA */
+
+   #btn-top{
+    display: none;
    }
 
 }

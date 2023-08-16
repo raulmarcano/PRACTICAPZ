@@ -96,3 +96,43 @@ var contenedor = document.querySelector('.slider'),
     }
          //Eventos del formulario
     formulario.addEventListener("submit",validar);
+
+
+    // BOTON SCROLL TOP
+    var btnTop = document.getElementById("btn-top"),
+        logo = document.getElementById("logo");
+
+    //DETECTAMOS SCROLL EN NUESTRA PAGINA WEB 
+
+    window.addEventListener("scroll", function(){
+        var  scrolle = (document.documentElement.scrollTop),
+          fullSize = Math.ceil(document.documentElement.offsetHeight),
+          sizeVP = Math.floor(document.documentElement.clientHeight);
+
+
+        if(scrolle > 100){
+            btnTop.classList.add("show");
+        }else{
+            btnTop.classList.remove("show");
+        }
+
+        //MODIFICAR ELEMENTO CUANDO LLEGUE A FINAL DE PÁGINA
+
+        if (fullSize == (scrolle + sizeVP)) {
+            btnTop.classList.add("scrollFinal"); 
+        }else{
+             btnTop.classList.remove("scrollFinal");
+        }
+   
+    });
+
+    //DETECTAMOS EVENTO CLICK EN EL BOTÓN
+
+    btnTop.addEventListener("click", function(){
+        window.scrollTo(0,0)
+    })
+
+    //DETECTAR EVENTO CLICK EN EL LOGO
+
+    logo.addEventListener("click", function(){
+        window.scrollTo(0,0)})
